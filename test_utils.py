@@ -11,7 +11,7 @@ class TestUtils(unittest.TestCase):
         
     
     def test_roots(self):
-        self.assertEqual(utils.roots(1,2,1),(-1.0,-1.0))
+        self.assertEqual(utils.roots(1,2,1),(-1,-1))
         
     
     def test_integrate(self):

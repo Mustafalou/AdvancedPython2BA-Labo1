@@ -15,6 +15,8 @@ def fact(n):
 		return factoriel
 	if n==0:
 		return 1
+	if n<0:
+		return "This is not a natural number"
 
 
 def roots(a, b, c):

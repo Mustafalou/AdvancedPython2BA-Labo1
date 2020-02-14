@@ -2,8 +2,9 @@
 # Math library
 # Author: Sébastien Combéfis
 # Version: February 8, 2018
-import scipy
-import scipy.integrate
+
+def f(x):
+	eval(x)
 def fact(n):
 	
 	i=1
@@ -22,24 +23,18 @@ def roots(a, b, c):
 	delta = b**2 - 4*a*c
 	racplus=(delta**(1/2)-b)/(2*a)
 	racmoin= ((-delta**(1/2))-b)/(2*a)
-	return racplus,racmoin
+	return racplus, racmoin
 
 def integrate(function, lower, upper):
-	"""Approximates the integral of a fonction between two bounds
-	
-	Pre: 'function' is a valid Python expression with x as a variable,
-		'lower' <= 'upper',
-		'function' continuous and integrable between 'lower‘ and 'upper'.
-	Post: Returns an approximation of the integral from 'lower' to 'upper'
-		of the specified 'function'.
-
-	Hint: You can use the 'integrate' function of the module 'scipy' and
-		you'll probably need the 'eval' function to evaluate the function
-		to integrate given as a string.
-	"""
-	return scipy.integrate.quad(eval(function),lower,upper)
-
-
+	deltax=0.0001
+	aire=0
+	x=lower
+	while x < upper:
+		x+=deltax
+		value = eval(function)
+		aire +=deltax*value
+	return round(aire, 3)
+		
 if __name__ == "__Main__":
 	print(fact(5))
 	print(roots(1, 0, 1))

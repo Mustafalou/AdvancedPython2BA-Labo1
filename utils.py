@@ -2,7 +2,7 @@
 # Math library
 # Author: Sébastien Combéfis
 # Version: February 8, 2018
-
+#yeah boyy
 def f(x):
 	eval(x)
 def fact(n):
